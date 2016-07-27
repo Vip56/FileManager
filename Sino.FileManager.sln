@@ -12,6 +12,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Sino.FileManager.Core", "src\Sino.FileManager.Core\Sino.FileManager.Core.xproj", "{709402F9-2F11-4F4E-888A-8A1EF56B9E32}"
 EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Sino.FileManager.Blob", "src\Sino.FileManager.Blob\Sino.FileManager.Blob.xproj", "{45529B12-943E-4995-8370-941A00C4C9FA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{BAC32426-EE94-4C69-B59E-DE97A80CA066}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,11 +26,16 @@ Global
 		{709402F9-2F11-4F4E-888A-8A1EF56B9E32}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{709402F9-2F11-4F4E-888A-8A1EF56B9E32}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{709402F9-2F11-4F4E-888A-8A1EF56B9E32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45529B12-943E-4995-8370-941A00C4C9FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45529B12-943E-4995-8370-941A00C4C9FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45529B12-943E-4995-8370-941A00C4C9FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45529B12-943E-4995-8370-941A00C4C9FA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{709402F9-2F11-4F4E-888A-8A1EF56B9E32} = {A1297BD6-EAEC-44CB-9C3E-C55D17D4F4E7}
+		{45529B12-943E-4995-8370-941A00C4C9FA} = {A1297BD6-EAEC-44CB-9C3E-C55D17D4F4E7}
 	EndGlobalSection
 EndGlobal
