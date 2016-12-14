@@ -46,4 +46,4 @@ $revision = [convert]::ToInt32($revision, 10)
 
 #exec { & dotnet test .\test\Sino.FileManager.Tests -c Release }
 
-exec { & dotnet pack .\src\Sino.FileManager.Blob -c Release -o .\artifacts --version-suffix=$revision }
+exec { & dotnet pack .\src\Sino.FileManager -c Release -o .\artifacts --version-suffix=$revision }
