@@ -1,4 +1,7 @@
 version: '{build}'
+branches:  
+  only:
+  - master
 build_script:
 - ps: .\Build.ps1
 test: off
@@ -7,6 +10,7 @@ artifacts:
   name: NuGet
 deploy:
 - provider: NuGet
+  name: production
   api_key:
     secure: Vki9Zifq8RFqD7VGcL/udbN7gUgJWLWYMZJqHSyeg7qI97kpsB4KJLF49Me2DoWj
   skip_symbols: true
