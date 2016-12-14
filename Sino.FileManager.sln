@@ -7,15 +7,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A1297BD6-EAE
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "global", "global", "{3C010848-F03E-4689-8231-9D87547134B4}"
 	ProjectSection(SolutionItems) = preProject
+		Build.ps1 = Build.ps1
 		global.json = global.json
 		ReadMe.md = ReadMe.md
 	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Sino.FileManager.Core", "src\Sino.FileManager.Core\Sino.FileManager.Core.xproj", "{709402F9-2F11-4F4E-888A-8A1EF56B9E32}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Sino.FileManager.Blob", "src\Sino.FileManager.Blob\Sino.FileManager.Blob.xproj", "{45529B12-943E-4995-8370-941A00C4C9FA}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{BAC32426-EE94-4C69-B59E-DE97A80CA066}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Sino.FileManager", "src\Sino.FileManager\Sino.FileManager.xproj", "{9717DDE1-8D05-4EBC-9EC2-2AD9D48ADB02}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,20 +22,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{709402F9-2F11-4F4E-888A-8A1EF56B9E32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{709402F9-2F11-4F4E-888A-8A1EF56B9E32}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{709402F9-2F11-4F4E-888A-8A1EF56B9E32}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{709402F9-2F11-4F4E-888A-8A1EF56B9E32}.Release|Any CPU.Build.0 = Release|Any CPU
-		{45529B12-943E-4995-8370-941A00C4C9FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{45529B12-943E-4995-8370-941A00C4C9FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{45529B12-943E-4995-8370-941A00C4C9FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{45529B12-943E-4995-8370-941A00C4C9FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9717DDE1-8D05-4EBC-9EC2-2AD9D48ADB02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9717DDE1-8D05-4EBC-9EC2-2AD9D48ADB02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9717DDE1-8D05-4EBC-9EC2-2AD9D48ADB02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9717DDE1-8D05-4EBC-9EC2-2AD9D48ADB02}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{709402F9-2F11-4F4E-888A-8A1EF56B9E32} = {A1297BD6-EAEC-44CB-9C3E-C55D17D4F4E7}
-		{45529B12-943E-4995-8370-941A00C4C9FA} = {A1297BD6-EAEC-44CB-9C3E-C55D17D4F4E7}
+		{9717DDE1-8D05-4EBC-9EC2-2AD9D48ADB02} = {A1297BD6-EAEC-44CB-9C3E-C55D17D4F4E7}
 	EndGlobalSection
 EndGlobal

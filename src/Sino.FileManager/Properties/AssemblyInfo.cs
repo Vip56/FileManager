@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 // associated with an assembly.
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Sino.FileManager.Blob")]
+[assembly: AssemblyProduct("Sino.FileManager")]
 [assembly: AssemblyTrademark("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible
@@ -16,4 +16,4 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("45529b12-943e-4995-8370-941a00c4c9fa")]
+[assembly: Guid("9717dde1-8d05-4ebc-9ec2-2ad9d48adb02")]

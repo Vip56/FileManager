@@ -7,11 +7,11 @@
 
   <Import Project="$(VSToolsPath)\DotNet\Microsoft.DotNet.Props" Condition="'$(VSToolsPath)' != ''" />
   <PropertyGroup Label="Globals">
-    <ProjectGuid>45529b12-943e-4995-8370-941a00c4c9fa</ProjectGuid>
-    <RootNamespace>Sino.FileManager.Blob</RootNamespace>
+    <ProjectGuid>9717dde1-8d05-4ebc-9ec2-2ad9d48adb02</ProjectGuid>
+    <RootNamespace>Sino.FileManager</RootNamespace>
     <BaseIntermediateOutputPath Condition="'$(BaseIntermediateOutputPath)'=='' ">.\obj</BaseIntermediateOutputPath>
     <OutputPath Condition="'$(OutputPath)'=='' ">.\bin\</OutputPath>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
   </PropertyGroup>
 
   <PropertyGroup>
