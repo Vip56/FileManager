@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace Sino.FileManager.Core
 {
@@ -8,14 +9,14 @@ namespace Sino.FileManager.Core
     /// </summary>
     public interface IFileStorage
     {
-        void Init();
+        Task Init();
 
-        IFileEntry GetEntry(string filename);
+        Task<IFileEntry> GetEntryAsync(string filename);
 
-        IFileEntry GetEntry(string filename, long pos, long length);
+        Task<IFileEntry> GetEntryAsync(string filename, long pos, long length);
 
-        IEnumerable<IFileEntry> GetEntries(IEnumerable<IFileEntry> filenames);
+        Task<IEnumerable<IFileEntry>> GetEntriesAsync(IEnumerable<IFileEntry> filenames);
 
-        string SaveEntry(Stream stream, string filename);
+        Task<string> SaveEntryAsync(Stream stream, string filename);
     }
 }

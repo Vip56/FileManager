@@ -5,7 +5,7 @@ using System.Linq;
 using System.IO;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Blob;
-using Microsoft.Azure;
+using System.Threading.Tasks;
 
 namespace Sino.FileManager
 {
@@ -20,12 +20,8 @@ namespace Sino.FileManager
 
         protected CloudBlobContainer BlobContainer { get; set; }
 
-        public BlobFileStorage()
-            : this(DefaultConnectionString)
-        { }
-
-        public BlobFileStorage(string name)
-           : this(CloudStorageAccount.Parse(CloudConfigurationManager.GetSetting(name)))
+        public BlobFileStorage(string connectionString)
+           : this(CloudStorageAccount.Parse(connectionString))
         { }
 
         public BlobFileStorage(CloudStorageAccount account)
@@ -54,32 +50,32 @@ namespace Sino.FileManager
 
         #region IFileStorage Impl
 
-        public void Init()
+        public async Task Init()
         {
             var blobClient = Account.CreateCloudBlobClient();
             BlobContainer = blobClient.GetContainerReference(DefaultContainer);
-            BlobContainer.CreateIfNotExists();
+            await BlobContainer.CreateIfNotExistsAsync();
         }
 
-        public IEnumerable<IFileEntry> GetEntries(IEnumerable<IFileEntry> filenames)
+        public async Task<IEnumerable<IFileEntry>> GetEntriesAsync(IEnumerable<IFileEntry> filenames)
         {
             var list = new List<IFileEntry>();
             if (filenames != null && filenames.Count() > 0)
             {
                 foreach (var item in filenames)
                 {
-                    list.Add(GetEntry(item.FileName, item.StartPosition, item.Length));
+                    list.Add(await GetEntryAsync(item.FileName, item.StartPosition, item.Length));
                 }
             }
             return list;
         }
 
-        public IFileEntry GetEntry(string filename)
+        public async Task<IFileEntry> GetEntryAsync(string filename)
         {
-            return GetEntry(filename, 0, -1);
+            return await GetEntryAsync(filename, 0, -1);
         }
 
-        public IFileEntry GetEntry(string filename, long pos, long length)
+        public async Task<IFileEntry> GetEntryAsync(string filename, long pos, long length)
         {
             if(string.IsNullOrEmpty(filename))
             {
@@ -103,9 +99,9 @@ namespace Sino.FileManager
             };
 
             var blockblob = GetBlockBlob(filename);
-            if (blockblob.Exists())
+            if (await blockblob.ExistsAsync())
             {
-                blockblob.DownloadRangeToStream(entry.Stream, pos, length == -1 ? (long?)null : length);
+                await blockblob.DownloadRangeToStreamAsync(entry.Stream, pos, length == -1 ? (long?)null : length);
             }
             else
             {
@@ -114,7 +110,7 @@ namespace Sino.FileManager
             return entry;
         }
 
-        public string SaveEntry(Stream stream, string filename)
+        public async Task<string> SaveEntryAsync(Stream stream, string filename)
         {
             if (stream == null)
             {
@@ -125,7 +121,7 @@ namespace Sino.FileManager
                 throw new ArgumentNullException("filename");
             }
             var blockblob = GetBlockBlob(filename);
-            blockblob.UploadFromStream(stream);
+            await blockblob.UploadFromStreamAsync(stream);
             return filename;
         }
 

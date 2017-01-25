@@ -28,37 +28,21 @@ namespace Sino.FileManager
             FileStorage.Init();
         }
 
-        public IFileEntry Get(string arg)
+        public async Task<IFileEntry> GetAsync(string arg)
         {
-            return Get(arg, 0, -1);
+            return await GetAsync(arg, 0, -1);
         }
 
-        public IFileEntry Get(string arg, long pos, long length)
+        public async Task<IFileEntry> GetAsync(string arg, long pos, long length)
         {
             if (FileStorage == null)
             {
                 throw new NullReferenceException();
             }
-            return FileStorage.GetEntry(arg, pos, length);
+            return await FileStorage.GetEntryAsync(arg, pos, length);
         }
 
-        public Task<IFileEntry> GetAsync(string arg)
-        {
-            return Task<IFileEntry>.Factory.StartNew(() =>
-            {
-                return Get(arg);
-            });
-        }
-
-        public Task<IFileEntry> GetAsync(string arg, long pos, long length)
-        {
-            return Task<IFileEntry>.Factory.StartNew(() =>
-            {
-                return Get(arg, pos, length);
-            });
-        }
-
-        public string Save(string path)
+        public async Task<string> SaveAsync(string path)
         {
             if(string.IsNullOrEmpty(path))
             {
@@ -70,7 +54,7 @@ namespace Sino.FileManager
                 string filename = Path.GetFileName(path);
                 using (var fs = File.Open(path, FileMode.Open, FileAccess.Read, FileShare.Read))
                 {
-                    return Save(fs, filename);
+                    return await SaveAsync(fs, filename);
                 }
             }
             else
@@ -79,7 +63,7 @@ namespace Sino.FileManager
             }
         }
 
-        public string Save(Stream stream, string filename)
+        public async Task<string> SaveAsync(Stream stream, string filename)
         {
             if (stream == null)
             {
@@ -101,23 +85,7 @@ namespace Sino.FileManager
 
             stream.Position = 0;
             string savepath = FilenameParser.Parse(filename);
-            return FileStorage.SaveEntry(stream, savepath);
-        }
-
-        public Task<string> SaveAsync(string path)
-        {
-            return Task<string>.Factory.StartNew(() =>
-            {
-                return Save(path);
-            });
-        }
-
-        public Task<string> SaveAsync(Stream stream, string filename)
-        {
-            return Task<string>.Factory.StartNew(() =>
-            {
-                return Save(stream, filename);
-            });
+            return await FileStorage.SaveEntryAsync(stream, savepath);
         }
     }
 }
