@@ -63,7 +63,7 @@ namespace Sino.FileManager
             }
         }
 
-        public async Task<string> SaveAsync(Stream stream, string filename)
+        public async Task<string> SaveAsync(Stream stream, string filename, bool generateFilename = true)
         {
             if (stream == null)
             {
@@ -84,7 +84,7 @@ namespace Sino.FileManager
             }
 
             stream.Position = 0;
-            string savepath = FilenameParser.Parse(filename);
+            string savepath = generateFilename ? FilenameParser.Parse(filename) : filename;
             return await FileStorage.SaveEntryAsync(stream, savepath);
         }
     }
