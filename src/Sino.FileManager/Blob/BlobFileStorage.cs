@@ -75,9 +75,28 @@ namespace Sino.FileManager
             return await GetEntryAsync(filename, 0, -1);
         }
 
-        public async Task<IFileEntry> GetEntryAsync(string filename, long pos, long length)
+        public Task<bool> ExistsAsync(string filename)
         {
             if(string.IsNullOrEmpty(filename))
+            {
+                throw new ArgumentNullException(nameof(filename));
+            }
+            DefaultFileEntry entry = new DefaultFileEntry
+            {
+                FileName = filename,
+                StartPosition = 0,
+                Length = -1,
+                Stream = new MemoryStream()
+            };
+
+            var blockblob = GetBlockBlob(filename);
+
+            return blockblob.ExistsAsync();
+        }
+
+        public async Task<IFileEntry> GetEntryAsync(string filename, long pos, long length)
+        {
+            if (string.IsNullOrEmpty(filename))
             {
                 throw new ArgumentNullException("filename");
             }
@@ -85,7 +104,7 @@ namespace Sino.FileManager
             {
                 throw new ArgumentOutOfRangeException("pos");
             }
-            if(length < -1)
+            if (length < -1)
             {
                 throw new ArgumentOutOfRangeException("length");
             }
