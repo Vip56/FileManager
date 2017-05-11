@@ -39,5 +39,12 @@ namespace Sino.FileManager.Core
         /// <param name="pos">获取文件的起始字节</param>
         /// <param name="length">获取文件的字节数</param>
         Task<IFileEntry> GetAsync(string arg, long pos, long length);
+
+        /// <summary>
+        /// 判断文件是否存在
+        /// </summary>
+        /// <param name="filename">文件路径</param>
+        /// <returns>False表示不存在,True表示存在</returns>
+        Task<bool> ExistsAsync(string filename);
     }
 }

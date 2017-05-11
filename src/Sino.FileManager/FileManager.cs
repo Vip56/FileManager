@@ -87,5 +87,10 @@ namespace Sino.FileManager
             string savepath = generateFilename ? FilenameParser.Parse(filename) : filename;
             return await FileStorage.SaveEntryAsync(stream, savepath);
         }
+
+        public Task<bool> ExistsAsync(string filename)
+        {
+            return FileStorage.ExistsAsync(filename);
+        }
     }
 }

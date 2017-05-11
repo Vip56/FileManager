@@ -18,5 +18,7 @@ namespace Sino.FileManager.Core
         Task<IEnumerable<IFileEntry>> GetEntriesAsync(IEnumerable<IFileEntry> filenames);
 
         Task<string> SaveEntryAsync(Stream stream, string filename);
+
+        Task<bool> ExistsAsync(string filename);
     }
 }
