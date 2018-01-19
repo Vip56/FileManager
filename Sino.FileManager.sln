@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2020
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A1297BD6-EAEC-44CB-9C3E-C55D17D4F4E7}"
 EndProject
@@ -9,14 +9,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "global", "global", "{3C0108
 	ProjectSection(SolutionItems) = preProject
 		appveyor.yml = appveyor.yml
 		Build.ps1 = Build.ps1
-		global.json = global.json
 		LICENSE = LICENSE
 		ReadMe.md = ReadMe.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{BAC32426-EE94-4C69-B59E-DE97A80CA066}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Sino.FileManager", "src\Sino.FileManager\Sino.FileManager.xproj", "{9717DDE1-8D05-4EBC-9EC2-2AD9D48ADB02}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sino.FileManager", "src\Sino.FileManager\Sino.FileManager.csproj", "{9717DDE1-8D05-4EBC-9EC2-2AD9D48ADB02}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,5 +33,8 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{9717DDE1-8D05-4EBC-9EC2-2AD9D48ADB02} = {A1297BD6-EAEC-44CB-9C3E-C55D17D4F4E7}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7BE2C052-1568-4E4D-BE74-2115B3B82B9F}
 	EndGlobalSection
 EndGlobal

@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <VersionPrefix>1.1.1-beta</VersionPrefix>
+    <TargetFramework>netstandard1.6</TargetFramework>
+    <AssemblyName>Sino.FileManager</AssemblyName>
+    <PackageId>Sino.FileManager</PackageId>
+    <PackageIconUrl>https://avatars0.githubusercontent.com/u/16951448?v=3&amp;s=70</PackageIconUrl>
+    <PackageProjectUrl>https://github.com/Vip56/Sino.FileManager</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/Vip56/Sino.FileManager/blob/master/LICENSE</PackageLicenseUrl>
+    <NetStandardImplicitPackageVersion>1.6.0</NetStandardImplicitPackageVersion>
+    <PackageTargetFallback>$(PackageTargetFallback);dnxcore50</PackageTargetFallback>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="aliyun.oss.sdk.core" Version="2.5.3" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="1.0.2" />
+  </ItemGroup>
+
+</Project>

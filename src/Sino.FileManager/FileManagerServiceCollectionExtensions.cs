@@ -1,6 +1,7 @@
 ﻿using System;
 using Sino.FileManager;
 using Sino.FileManager.Core;
+using Sino.FileManager.Oss;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
@@ -18,10 +19,10 @@ namespace Microsoft.Extensions.DependencyInjection
             if (string.IsNullOrEmpty(containerString))
                 throw new ArgumentNullException(nameof(containerString));
 
-            var storage = new BlobFileStorage(connectionString);
-            storage.DefaultContainer = containerString;
+            var storage = new OssFileStorage(connectionString);
+            storage.DefaultBucket = containerString;
 
-            var parser = new BlobFilenameParser();
+            var parser = new OssFilenameParser();
 
             services.AddSingleton<IFileManager>(new FileManager(storage, parser));
 
