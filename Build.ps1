@@ -22,4 +22,4 @@ $revision = [convert]::ToInt32($revision, 10)
 
 exec { & dotnet pack .\src\Sino.FileManager -c Release -o .\artifacts --version-suffix=$revision }
 
-exec { & dotnet push .\src\Sino.FileManager\artifacts\*.nupkg -ApiKey cccc9d81-f2a8-4230-92ef-5516f045ce45 }
+exec { & dotnet nuget push .\src\Sino.FileManager\artifacts\*.nupkg -k cccc9d81-f2a8-4230-92ef-5516f045ce45 -s https://api.nuget.org/v3/index.json }
