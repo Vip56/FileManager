@@ -17,6 +17,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{BAC32426-E
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sino.FileManager", "src\Sino.FileManager\Sino.FileManager.csproj", "{9717DDE1-8D05-4EBC-9EC2-2AD9D48ADB02}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileManagerDemo", "test\FileManagerDemo\FileManagerDemo.csproj", "{D4AE49F9-8CC2-4867-8E91-0FB0F633FD68}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,12 +29,17 @@ Global
 		{9717DDE1-8D05-4EBC-9EC2-2AD9D48ADB02}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9717DDE1-8D05-4EBC-9EC2-2AD9D48ADB02}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9717DDE1-8D05-4EBC-9EC2-2AD9D48ADB02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4AE49F9-8CC2-4867-8E91-0FB0F633FD68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4AE49F9-8CC2-4867-8E91-0FB0F633FD68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4AE49F9-8CC2-4867-8E91-0FB0F633FD68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4AE49F9-8CC2-4867-8E91-0FB0F633FD68}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{9717DDE1-8D05-4EBC-9EC2-2AD9D48ADB02} = {A1297BD6-EAEC-44CB-9C3E-C55D17D4F4E7}
+		{D4AE49F9-8CC2-4867-8E91-0FB0F633FD68} = {BAC32426-EE94-4C69-B59E-DE97A80CA066}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7BE2C052-1568-4E4D-BE74-2115B3B82B9F}

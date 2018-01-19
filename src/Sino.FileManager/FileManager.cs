@@ -13,17 +13,8 @@ namespace Sino.FileManager
 
         public FileManager(IFileStorage filestorage, IFilenameParser filenameparser)
         {
-            if (filestorage == null)
-            {
-                throw new ArgumentNullException("filestorage");
-            }
-            if (filenameparser == null)
-            {
-                throw new ArgumentNullException("filenameparser");
-            }
-
-            FilenameParser = filenameparser;
-            FileStorage = filestorage;
+            FilenameParser = filenameparser ?? throw new ArgumentNullException("filenameparser");
+            FileStorage = filestorage ?? throw new ArgumentNullException("filestorage");
 
             FileStorage.Init();
         }
@@ -39,7 +30,7 @@ namespace Sino.FileManager
             {
                 throw new NullReferenceException();
             }
-            return await FileStorage.GetEntryAsync(arg, pos, length);
+            return await FileStorage.GetEntryAsync(arg.Replace('\\', '/'), pos, length);
         }
 
         public async Task<string> SaveAsync(string path)
@@ -85,12 +76,12 @@ namespace Sino.FileManager
 
             stream.Position = 0;
             string savepath = generateFilename ? FilenameParser.Parse(filename) : filename;
-            return await FileStorage.SaveEntryAsync(stream, savepath);
+            return await FileStorage.SaveEntryAsync(stream, savepath.Replace('\\','/'));
         }
 
         public Task<bool> ExistsAsync(string filename)
         {
-            return FileStorage.ExistsAsync(filename);
+            return FileStorage.ExistsAsync(filename.Replace('\\', '/'));
         }
     }
 }
