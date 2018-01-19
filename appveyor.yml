@@ -8,11 +8,3 @@ test: off
 artifacts:  
 - path: .\src\Sino.FileManager\artifacts\*.nupkg
   name: NuGet
-deploy:
-- provider: NuGet
-  name: production
-  api_key:
-    secure: cccc9d81-f2a8-4230-92ef-5516f045ce45
-  skip_symbols: true
-  on:
-    branch: master
