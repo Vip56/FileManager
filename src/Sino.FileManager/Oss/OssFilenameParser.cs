@@ -1,10 +1,12 @@
 ﻿using Sino.FileManager.Core;
 using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Text;
 
-namespace Sino.FileManager
+namespace Sino.FileManager.Oss
 {
-    public class BlobFilenameParser : IFilenameParser
+    public class OssFilenameParser : IFilenameParser
     {
         public string Parse(string filename)
         {
