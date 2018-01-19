@@ -21,3 +21,5 @@ $revision = [convert]::ToInt32($revision, 10)
 #exec { & dotnet test .\test\Sino.FileManager.Tests -c Release }
 
 exec { & dotnet pack .\src\Sino.FileManager -c Release -o .\artifacts --version-suffix=$revision }
+
+exec { & dotnet push .\src\Sino.FileManager\artifacts\*.nupkg -ApiKey cccc9d81-f2a8-4230-92ef-5516f045ce45 }
