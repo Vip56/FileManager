@@ -114,6 +114,7 @@ namespace Sino.FileManager.Oss
             {
                 var obj = GetBlockBlob(filename);
                 await obj.Content.CopyToAsync(entry.Stream);
+                entry.Stream.Position = 0;
             }
             else
             {
