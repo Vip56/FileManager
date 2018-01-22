@@ -12,6 +12,7 @@ namespace FileManagerDemo
         {
             var storage = new OssFileStorage("");
             storage.DefaultBucket = "";
+            storage.RootDirectory = "";
 
             var parser = new OssFilenameParser();
 
