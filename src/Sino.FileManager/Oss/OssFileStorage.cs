@@ -135,8 +135,7 @@ namespace Sino.FileManager.Oss
             {
                 throw new ArgumentNullException("filename");
             }
-            filename = RootDirectory + '/' + filename;
-            Client.PutObject(DefaultBucket, filename, stream);
+            Client.PutObject(DefaultBucket, RootDirectory + '/' + filename, stream);
             return Task.FromResult(filename);
         }
 
