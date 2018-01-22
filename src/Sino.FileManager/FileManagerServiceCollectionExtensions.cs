@@ -12,7 +12,8 @@ namespace Microsoft.Extensions.DependencyInjection
         /// </summary>
         /// <param name="connectionString">Blob的连接字符串</param>
         /// <param name="containerString">默认容器名称</param>
-        public static IServiceCollection AddFileManager(this IServiceCollection services, string connectionString, string containerString)
+        /// <param name="rootDirectory">根文件夹路径</param>
+        public static IServiceCollection AddFileManager(this IServiceCollection services, string connectionString, string containerString, string rootDirectory = "upload")
         {
             if (string.IsNullOrEmpty(connectionString))
                 throw new ArgumentNullException(nameof(connectionString));
@@ -21,6 +22,7 @@ namespace Microsoft.Extensions.DependencyInjection
 
             var storage = new OssFileStorage(connectionString);
             storage.DefaultBucket = containerString;
+            storage.RootDirectory = rootDirectory;
 
             var parser = new OssFilenameParser();
 

@@ -18,6 +18,8 @@ namespace Sino.FileManager.Oss
 
         public string DefaultBucket { get; set; }
 
+        public string RootDirectory { get; set; }
+
         protected string EndPoint { get; set; }
 
         protected string AccessKeyId { get; set; }
@@ -133,6 +135,7 @@ namespace Sino.FileManager.Oss
             {
                 throw new ArgumentNullException("filename");
             }
+            filename = RootDirectory + '/' + filename;
             Client.PutObject(DefaultBucket, filename, stream);
             return Task.FromResult(filename);
         }
