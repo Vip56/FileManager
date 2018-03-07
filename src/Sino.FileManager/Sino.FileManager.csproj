@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <VersionPrefix>1.1.1-beta</VersionPrefix>
-    <TargetFramework>netstandard1.6</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>Sino.FileManager</AssemblyName>
     <PackageId>Sino.FileManager</PackageId>
     <PackageIconUrl>https://avatars0.githubusercontent.com/u/16951448?v=3&amp;s=70</PackageIconUrl>
@@ -13,12 +13,16 @@
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
-    <Version>1.2.3-beta</Version>
+    <Version>1.2.3-beta2</Version>
+    <Authors>y-z-f</Authors>
+    <RepositoryUrl>https://github.com/Vip56/Sino.FileManager.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <Description>基于阿里OSS的存储</Description>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="aliyun.oss.sdk.core" Version="2.5.3" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="1.0.2" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="2.0.0" />
   </ItemGroup>
 
 </Project>
