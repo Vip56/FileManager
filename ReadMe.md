@@ -6,6 +6,10 @@
 
 ### 安装
 ```
-Install-Package Sino.FileManager -Pre
+Install-Package Sino.FileManager
 ```
 后台开发组提供支持
+
+
+## 版本更新记录
+* 支持asp.net core 2.0 by y-z-f
