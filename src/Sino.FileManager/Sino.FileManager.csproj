@@ -1,23 +1,24 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <VersionPrefix>1.1.1-beta</VersionPrefix>
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>Sino.FileManager</AssemblyName>
     <PackageId>Sino.FileManager</PackageId>
     <PackageIconUrl>https://avatars0.githubusercontent.com/u/16951448?v=3&amp;s=70</PackageIconUrl>
     <PackageProjectUrl>https://github.com/Vip56/Sino.FileManager</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/Vip56/Sino.FileManager/blob/master/LICENSE</PackageLicenseUrl>
-    <NetStandardImplicitPackageVersion>1.6.0</NetStandardImplicitPackageVersion>
+    <NetStandardImplicitPackageVersion>2.0.0</NetStandardImplicitPackageVersion>
     <PackageTargetFallback>$(PackageTargetFallback);dnxcore50</PackageTargetFallback>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
-    <Version>1.2.3-beta2</Version>
+    <Version>2.0.0-beta1</Version>
     <Authors>y-z-f</Authors>
     <RepositoryUrl>https://github.com/Vip56/Sino.FileManager.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <Description>基于阿里OSS的存储</Description>
+    <AssemblyVersion>2.0.0.1</AssemblyVersion>
+    <FileVersion>2.0.0.1</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
